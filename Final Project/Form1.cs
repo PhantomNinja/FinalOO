@@ -16,5 +16,25 @@ namespace Final_Project
         {
             InitializeComponent();
         }
+
+        private void ItemNumber1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Quantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QIS1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

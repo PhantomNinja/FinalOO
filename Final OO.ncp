@@ -1,0 +1,72 @@
+<Project>
+  <Name>Final OO</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Final Diagram</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Store</Name>
+        <Access>Public</Access>
+        <Location left="495" top="60" />
+        <Size width="162" height="167" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String Name</Member>
+        <Member type="Field">String Location</Member>
+        <Member type="Field">int Total_Sales</Member>
+        <Member type="Method">public void printLocation()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Department</Name>
+        <Access>Public</Access>
+        <Location left="495" top="337" />
+        <Size width="162" height="185" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">String Name</Member>
+        <Member type="Field">String Location</Member>
+        <Member type="Field">String[] Items</Member>
+        <Member type="Field">int Total_Sales</Member>
+        <Member type="Method">void printLocation()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Sales</Name>
+        <Access>Public</Access>
+        <Location left="10" top="580" />
+        <Size width="424" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int In_Stock</Member>
+        <Member type="Field">int Sold_This_Year</Member>
+        <Member type="Field">int Sold_Last_Year</Member>
+        <Member type="Field">int Total_Sold</Member>
+        <Member type="Method">public void UpdateStock(int In_Stock, int Sold_This_Year, int Total_Sold, int Sold)</Member>
+        <Member type="Method">public void NewYear(int Sold_This_Year, int Sold_Last_Year)</Member>
+        <Member type="Method">public void Print_Stats()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Items</Name>
+        <Access>Public</Access>
+        <Location left="706" top="580" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string Name</Member>
+        <Member type="Field">String Location</Member>
+        <Member type="Field">Double Price</Member>
+        <Member type="Field">int In_Stock</Member>
+        <Member type="Method">public void printInfo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

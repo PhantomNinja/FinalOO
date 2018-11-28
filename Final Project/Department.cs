@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Final_Project
 {
-    public class Stores
+    class Department : Stores
     {
         string Name;
         string Location;
+        string[] Items;
         int Total_Sales;
 
-        public virtual string printLocation() {
+        public override string printLocation()
+        {
             return Location;
         }
     }

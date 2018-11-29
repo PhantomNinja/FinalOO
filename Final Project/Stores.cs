@@ -10,7 +10,7 @@ namespace Final_Project
     {
         string Name;
         string Location;
-        int Total_Sales;
+        int TotalSales;
 
         public virtual string printLocation() {
             return Location;

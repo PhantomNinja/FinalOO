@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace Final_Project_2
 {
@@ -21,6 +22,8 @@ namespace Final_Project_2
         Auto_Item Auto = new Auto_Item();
         Hardware_Item Hardware = new Hardware_Item();
         Clothes_Item Clothes = new Clothes_Item();
+
+
 
         private void Form1_Load(object sender, EventArgs e)
         {

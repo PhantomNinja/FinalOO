@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Auto_Item.cs" />
     <Compile Include="Clothes_Item.cs" />
+    <Compile Include="Farm_Item.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

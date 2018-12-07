@@ -73,6 +73,24 @@ namespace Final_Project_2
             }
         }
 
+        public Auto_Item()
+        {
+            this._upc = 0;
+            this._location = "Farm";
+            this._price = 0;
+            this._inStock = 0;
+            this._name = "Something";
+        }
+
+        public Auto_Item(int upc, string location, double price, int stock, string name)
+        {
+            this._upc = upc;
+            this._location = location;
+            this._price = price;
+            this.InStock = stock;
+            this._name = name;
+        }
+
         public override string PrintLocation()
         {
             return 'A' + _location;

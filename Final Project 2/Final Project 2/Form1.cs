@@ -17,6 +17,8 @@ namespace Final_Project_2
             InitializeComponent();
         }
 
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -33,6 +35,11 @@ namespace Final_Project_2
         }
 
         private void NameD_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

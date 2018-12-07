@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Final_Project_2
 {
-    class Auto_Items : Item
+    class Clothes_Item : Item
     {
         private string _location;
         public string Location
@@ -60,11 +60,22 @@ namespace Final_Project_2
             }
         }
 
-
+        private int _upc;
+        public int Upc
+        {
+            get
+            {
+                return _upc;
+            }
+            set
+            {
+                _upc = value;
+            }
+        }
 
         public override string PrintLocation()
         {
-            return 'A' + _location;
+            return 'C' + _location;
         }
     }
 }

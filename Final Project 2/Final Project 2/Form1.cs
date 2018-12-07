@@ -17,7 +17,10 @@ namespace Final_Project_2
             InitializeComponent();
         }
 
-
+        Farm_Item Farm = new Farm_Item();
+        Auto_Item Auto = new Auto_Item();
+        Hardware_Item Hardware = new Hardware_Item();
+        Clothes_Item Clothes = new Clothes_Item();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -40,6 +43,56 @@ namespace Final_Project_2
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void STY1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Stock1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Price1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Loc1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void Name1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void StoreLoc1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void StoreName1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

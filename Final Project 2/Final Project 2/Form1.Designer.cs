@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UPCE = new System.Windows.Forms.TextBox();
             this.NameD = new System.Windows.Forms.MaskedTextBox();
             this.SLY1 = new System.Windows.Forms.MaskedTextBox();
             this.SLYD = new System.Windows.Forms.MaskedTextBox();
@@ -50,13 +50,13 @@
             this.StoreName1 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // UPCE
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(460, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.UPCE.Location = new System.Drawing.Point(12, 12);
+            this.UPCE.Name = "UPCE";
+            this.UPCE.Size = new System.Drawing.Size(460, 20);
+            this.UPCE.TabIndex = 0;
+            this.UPCE.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // NameD
             // 
@@ -91,6 +91,7 @@
             this.STY1.Name = "STY1";
             this.STY1.Size = new System.Drawing.Size(91, 20);
             this.STY1.TabIndex = 4;
+            this.STY1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.STY1_MaskInputRejected);
             // 
             // STYD
             // 
@@ -107,6 +108,7 @@
             this.Stock1.Name = "Stock1";
             this.Stock1.Size = new System.Drawing.Size(64, 20);
             this.Stock1.TabIndex = 6;
+            this.Stock1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Stock1_MaskInputRejected);
             // 
             // StockD
             // 
@@ -123,6 +125,7 @@
             this.Price1.Name = "Price1";
             this.Price1.Size = new System.Drawing.Size(64, 20);
             this.Price1.TabIndex = 8;
+            this.Price1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Price1_MaskInputRejected);
             // 
             // PriceD
             // 
@@ -140,6 +143,7 @@
             this.Loc1.Name = "Loc1";
             this.Loc1.Size = new System.Drawing.Size(64, 20);
             this.Loc1.TabIndex = 10;
+            this.Loc1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Loc1_MaskInputRejected);
             // 
             // Name1
             // 
@@ -147,6 +151,7 @@
             this.Name1.Name = "Name1";
             this.Name1.Size = new System.Drawing.Size(64, 20);
             this.Name1.TabIndex = 11;
+            this.Name1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Name1_MaskInputRejected);
             // 
             // LocD
             // 
@@ -165,6 +170,7 @@
             this.Add.TabIndex = 13;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // Search
             // 
@@ -174,6 +180,7 @@
             this.Search.TabIndex = 14;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // UpdateB
             // 
@@ -183,6 +190,7 @@
             this.UpdateB.TabIndex = 15;
             this.UpdateB.Text = "Update";
             this.UpdateB.UseVisualStyleBackColor = true;
+            this.UpdateB.Click += new System.EventHandler(this.UpdateB_Click);
             // 
             // StoreNameD
             // 
@@ -208,6 +216,7 @@
             this.StoreLoc1.Name = "StoreLoc1";
             this.StoreLoc1.Size = new System.Drawing.Size(86, 20);
             this.StoreLoc1.TabIndex = 18;
+            this.StoreLoc1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.StoreLoc1_MaskInputRejected);
             // 
             // StoreName1
             // 
@@ -215,6 +224,7 @@
             this.StoreName1.Name = "StoreName1";
             this.StoreName1.Size = new System.Drawing.Size(64, 20);
             this.StoreName1.TabIndex = 19;
+            this.StoreName1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.StoreName1_MaskInputRejected);
             // 
             // Form1
             // 
@@ -240,7 +250,7 @@
             this.Controls.Add(this.SLYD);
             this.Controls.Add(this.SLY1);
             this.Controls.Add(this.NameD);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UPCE);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -251,7 +261,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UPCE;
         private System.Windows.Forms.MaskedTextBox NameD;
         private System.Windows.Forms.MaskedTextBox SLY1;
         private System.Windows.Forms.MaskedTextBox SLYD;

@@ -48,6 +48,8 @@
             this.StoreLocD = new System.Windows.Forms.MaskedTextBox();
             this.StoreLoc1 = new System.Windows.Forms.MaskedTextBox();
             this.StoreName1 = new System.Windows.Forms.MaskedTextBox();
+            this.DepartmentD = new System.Windows.Forms.TextBox();
+            this.Department1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // UPCE
@@ -70,7 +72,7 @@
             // 
             // SLY1
             // 
-            this.SLY1.Location = new System.Drawing.Point(551, 76);
+            this.SLY1.Location = new System.Drawing.Point(618, 76);
             this.SLY1.Name = "SLY1";
             this.SLY1.Size = new System.Drawing.Size(83, 20);
             this.SLY1.TabIndex = 2;
@@ -78,7 +80,7 @@
             // 
             // SLYD
             // 
-            this.SLYD.Location = new System.Drawing.Point(551, 41);
+            this.SLYD.Location = new System.Drawing.Point(618, 41);
             this.SLYD.Name = "SLYD";
             this.SLYD.ReadOnly = true;
             this.SLYD.Size = new System.Drawing.Size(83, 20);
@@ -87,7 +89,7 @@
             // 
             // STY1
             // 
-            this.STY1.Location = new System.Drawing.Point(454, 76);
+            this.STY1.Location = new System.Drawing.Point(521, 76);
             this.STY1.Name = "STY1";
             this.STY1.Size = new System.Drawing.Size(91, 20);
             this.STY1.TabIndex = 4;
@@ -95,7 +97,7 @@
             // 
             // STYD
             // 
-            this.STYD.Location = new System.Drawing.Point(454, 41);
+            this.STYD.Location = new System.Drawing.Point(521, 41);
             this.STYD.Name = "STYD";
             this.STYD.ReadOnly = true;
             this.STYD.Size = new System.Drawing.Size(91, 20);
@@ -104,7 +106,7 @@
             // 
             // Stock1
             // 
-            this.Stock1.Location = new System.Drawing.Point(384, 76);
+            this.Stock1.Location = new System.Drawing.Point(451, 76);
             this.Stock1.Name = "Stock1";
             this.Stock1.Size = new System.Drawing.Size(64, 20);
             this.Stock1.TabIndex = 6;
@@ -112,7 +114,7 @@
             // 
             // StockD
             // 
-            this.StockD.Location = new System.Drawing.Point(384, 41);
+            this.StockD.Location = new System.Drawing.Point(451, 41);
             this.StockD.Name = "StockD";
             this.StockD.ReadOnly = true;
             this.StockD.Size = new System.Drawing.Size(64, 20);
@@ -121,7 +123,7 @@
             // 
             // Price1
             // 
-            this.Price1.Location = new System.Drawing.Point(314, 76);
+            this.Price1.Location = new System.Drawing.Point(381, 76);
             this.Price1.Name = "Price1";
             this.Price1.Size = new System.Drawing.Size(64, 20);
             this.Price1.TabIndex = 8;
@@ -129,7 +131,7 @@
             // 
             // PriceD
             // 
-            this.PriceD.Location = new System.Drawing.Point(314, 41);
+            this.PriceD.Location = new System.Drawing.Point(381, 41);
             this.PriceD.Name = "PriceD";
             this.PriceD.ReadOnly = true;
             this.PriceD.Size = new System.Drawing.Size(64, 20);
@@ -139,7 +141,7 @@
             // 
             // Loc1
             // 
-            this.Loc1.Location = new System.Drawing.Point(244, 76);
+            this.Loc1.Location = new System.Drawing.Point(311, 76);
             this.Loc1.Name = "Loc1";
             this.Loc1.Size = new System.Drawing.Size(64, 20);
             this.Loc1.TabIndex = 10;
@@ -155,7 +157,7 @@
             // 
             // LocD
             // 
-            this.LocD.Location = new System.Drawing.Point(244, 41);
+            this.LocD.Location = new System.Drawing.Point(311, 41);
             this.LocD.Name = "LocD";
             this.LocD.ReadOnly = true;
             this.LocD.Size = new System.Drawing.Size(64, 20);
@@ -226,11 +228,29 @@
             this.StoreName1.TabIndex = 19;
             this.StoreName1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.StoreName1_MaskInputRejected);
             // 
+            // DepartmentD
+            // 
+            this.DepartmentD.Location = new System.Drawing.Point(244, 41);
+            this.DepartmentD.Name = "DepartmentD";
+            this.DepartmentD.ReadOnly = true;
+            this.DepartmentD.Size = new System.Drawing.Size(61, 20);
+            this.DepartmentD.TabIndex = 20;
+            this.DepartmentD.Text = "Department";
+            // 
+            // Department1
+            // 
+            this.Department1.Location = new System.Drawing.Point(244, 76);
+            this.Department1.Name = "Department1";
+            this.Department1.Size = new System.Drawing.Size(61, 20);
+            this.Department1.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 245);
+            this.Controls.Add(this.Department1);
+            this.Controls.Add(this.DepartmentD);
             this.Controls.Add(this.StoreName1);
             this.Controls.Add(this.StoreLoc1);
             this.Controls.Add(this.StoreLocD);
@@ -281,6 +301,8 @@
         private System.Windows.Forms.MaskedTextBox StoreLocD;
         private System.Windows.Forms.MaskedTextBox StoreLoc1;
         private System.Windows.Forms.MaskedTextBox StoreName1;
+        private System.Windows.Forms.TextBox DepartmentD;
+        private System.Windows.Forms.TextBox Department1;
     }
 }
 

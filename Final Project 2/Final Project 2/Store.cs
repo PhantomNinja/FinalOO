@@ -10,8 +10,6 @@ namespace Final_Project_2
     {
         public readonly string Name;
         public readonly string Location;
-        int[] UPC;
-
         public Store()
         {
             this.Name = "Number 1";

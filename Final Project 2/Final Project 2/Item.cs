@@ -9,5 +9,7 @@ namespace Final_Project_2
     abstract class Item
     {
         public abstract string PrintLocation();
+        public abstract void UpdateStock(int amount);
+        public abstract void NewYear();
     }
 }

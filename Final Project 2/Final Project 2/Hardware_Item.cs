@@ -73,6 +73,32 @@ namespace Final_Project_2
             }
         }
 
+        private int _soldLastYear;
+        public int SLY
+        {
+            get
+            {
+                return _soldLastYear;
+            }
+            set
+            {
+                _soldLastYear = value;
+            }
+        }
+
+        private int _soldThisYear;
+        public int STY
+        {
+            get
+            {
+                return _soldThisYear;
+            }
+            set
+            {
+                _soldThisYear = value;
+            }
+        }
+
         public Hardware_Item()
         {
             this._upc = 0;
@@ -82,18 +108,31 @@ namespace Final_Project_2
             this._name = "Something";
         }
 
-        public Hardware_Item(int upc, string location, double price, int stock, string name)
+        public Hardware_Item(int upc, string location, double price, int stock, string name, int SLY, int STY)
         {
             this._upc = upc;
             this._location = location;
             this._price = price;
             this.InStock = stock;
             this._name = name;
+            this._soldLastYear = SLY;
+            this._soldThisYear = STY;
         }
 
         public override string PrintLocation()
         {
             return 'H' + _location;
+        }
+        public override void UpdateStock(int amount)
+        {
+            this._soldThisYear = this._soldThisYear + amount;
+            this._inStock = this._inStock + amount;
+        }
+
+        public override void NewYear()
+        {
+            this._soldLastYear = this._soldThisYear;
+            this._soldThisYear = 0;
         }
     }
 }

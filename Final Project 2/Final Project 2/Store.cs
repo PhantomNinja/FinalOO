@@ -10,6 +10,7 @@ namespace Final_Project_2
     {
         public readonly string Name;
         public readonly string Location;
+        int[] UPC;
 
         public Store()
         {
@@ -17,7 +18,13 @@ namespace Final_Project_2
             this.Location = "Sioux Falls";
         }
 
-        private string PrintLocation()
+        public Store(string name, string location)
+        {
+            this.Name = name;
+            this.Location = location;
+        }
+
+        public string PrintLocation()
         {
             return this.Location;
         }

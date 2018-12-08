@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SQLite;
+using System.Collections;
 
 namespace Final_Project_2
 {
@@ -16,15 +16,14 @@ namespace Final_Project_2
         public Form1()
         {
             InitializeComponent();
+            
         }
-
-        Farm_Item Farm = new Farm_Item();
+        Store one = new Store();
+        List<Farm_Item> Farm = new List<Farm_Item>();
         Auto_Item Auto = new Auto_Item();
         Hardware_Item Hardware = new Hardware_Item();
         Clothes_Item Clothes = new Clothes_Item();
-
-
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -52,7 +51,9 @@ namespace Final_Project_2
 
         private void Add_Click(object sender, EventArgs e)
         {
-
+            Auto.InStock = 2;
+            Farm.Add(new Farm_Item());
+            this.StoreName1.Text = Auto.InStock.ToString();
         }
 
         private void UpdateB_Click(object sender, EventArgs e)

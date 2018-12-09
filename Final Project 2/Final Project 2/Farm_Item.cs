@@ -121,7 +121,7 @@ namespace Final_Project_2
 
         public override string PrintLocation()
         {
-            return 'A' + _location;
+            return 'F' + _location;
         }
 
         public override void UpdateStock(int amount)

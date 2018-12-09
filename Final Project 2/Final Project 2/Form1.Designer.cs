@@ -274,12 +274,14 @@
             // 
             // NewYear
             // 
+            this.NewYear.BackColor = System.Drawing.Color.Red;
+            this.NewYear.ForeColor = System.Drawing.SystemColors.Desktop;
             this.NewYear.Location = new System.Drawing.Point(788, 9);
             this.NewYear.Name = "NewYear";
             this.NewYear.Size = new System.Drawing.Size(75, 23);
             this.NewYear.TabIndex = 24;
             this.NewYear.Text = "New Year";
-            this.NewYear.UseVisualStyleBackColor = true;
+            this.NewYear.UseVisualStyleBackColor = false;
             this.NewYear.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1

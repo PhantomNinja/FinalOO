@@ -50,13 +50,16 @@
             this.StoreName1 = new System.Windows.Forms.MaskedTextBox();
             this.DepartmentD = new System.Windows.Forms.TextBox();
             this.Department1 = new System.Windows.Forms.TextBox();
+            this.AddStock = new System.Windows.Forms.Button();
+            this.Sold = new System.Windows.Forms.Button();
+            this.NewYear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UPCE
             // 
             this.UPCE.Location = new System.Drawing.Point(12, 12);
             this.UPCE.Name = "UPCE";
-            this.UPCE.Size = new System.Drawing.Size(460, 20);
+            this.UPCE.Size = new System.Drawing.Size(363, 20);
             this.UPCE.TabIndex = 0;
             this.UPCE.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -166,32 +169,35 @@
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(478, 10);
+            this.Add.BackColor = System.Drawing.Color.Red;
+            this.Add.Location = new System.Drawing.Point(380, 12);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(75, 23);
+            this.Add.Size = new System.Drawing.Size(84, 23);
             this.Add.TabIndex = 13;
             this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
+            this.Add.UseVisualStyleBackColor = false;
             this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(640, 9);
+            this.Search.BackColor = System.Drawing.Color.Red;
+            this.Search.Location = new System.Drawing.Point(543, 10);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(75, 23);
             this.Search.TabIndex = 14;
             this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
+            this.Search.UseVisualStyleBackColor = false;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // UpdateB
             // 
-            this.UpdateB.Location = new System.Drawing.Point(559, 9);
+            this.UpdateB.BackColor = System.Drawing.Color.Red;
+            this.UpdateB.Location = new System.Drawing.Point(462, 12);
             this.UpdateB.Name = "UpdateB";
             this.UpdateB.Size = new System.Drawing.Size(75, 23);
             this.UpdateB.TabIndex = 15;
             this.UpdateB.Text = "Update";
-            this.UpdateB.UseVisualStyleBackColor = true;
+            this.UpdateB.UseVisualStyleBackColor = false;
             this.UpdateB.Click += new System.EventHandler(this.UpdateB_Click);
             // 
             // StoreNameD
@@ -244,11 +250,46 @@
             this.Department1.Size = new System.Drawing.Size(61, 20);
             this.Department1.TabIndex = 21;
             // 
+            // AddStock
+            // 
+            this.AddStock.BackColor = System.Drawing.Color.Red;
+            this.AddStock.Location = new System.Drawing.Point(626, 10);
+            this.AddStock.Name = "AddStock";
+            this.AddStock.Size = new System.Drawing.Size(75, 23);
+            this.AddStock.TabIndex = 22;
+            this.AddStock.Text = "Add Stock";
+            this.AddStock.UseVisualStyleBackColor = false;
+            this.AddStock.Click += new System.EventHandler(this.AddStock_Click);
+            // 
+            // Sold
+            // 
+            this.Sold.BackColor = System.Drawing.Color.Red;
+            this.Sold.Location = new System.Drawing.Point(707, 9);
+            this.Sold.Name = "Sold";
+            this.Sold.Size = new System.Drawing.Size(75, 23);
+            this.Sold.TabIndex = 23;
+            this.Sold.Text = "Sold Stock";
+            this.Sold.UseVisualStyleBackColor = false;
+            this.Sold.Click += new System.EventHandler(this.Sold_Click);
+            // 
+            // NewYear
+            // 
+            this.NewYear.Location = new System.Drawing.Point(788, 9);
+            this.NewYear.Name = "NewYear";
+            this.NewYear.Size = new System.Drawing.Size(75, 23);
+            this.NewYear.TabIndex = 24;
+            this.NewYear.Text = "New Year";
+            this.NewYear.UseVisualStyleBackColor = true;
+            this.NewYear.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 245);
+            this.ClientSize = new System.Drawing.Size(888, 160);
+            this.Controls.Add(this.NewYear);
+            this.Controls.Add(this.Sold);
+            this.Controls.Add(this.AddStock);
             this.Controls.Add(this.Department1);
             this.Controls.Add(this.DepartmentD);
             this.Controls.Add(this.StoreName1);
@@ -303,6 +344,9 @@
         private System.Windows.Forms.MaskedTextBox StoreName1;
         private System.Windows.Forms.TextBox DepartmentD;
         private System.Windows.Forms.TextBox Department1;
+        private System.Windows.Forms.Button AddStock;
+        private System.Windows.Forms.Button Sold;
+        private System.Windows.Forms.Button NewYear;
     }
 }
 

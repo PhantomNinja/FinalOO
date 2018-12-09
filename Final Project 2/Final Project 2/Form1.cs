@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using System.Data.OleDb;
 
 namespace Final_Project_2
 {
@@ -52,7 +53,7 @@ namespace Final_Project_2
         }
 
         private void Add_Click(object sender, EventArgs e)
-        {
+        { 
             int q = 0;
             if(this.Department1.Text == "Auto")
             {
@@ -62,14 +63,23 @@ namespace Final_Project_2
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Farm.Count; i++)
+                {
                     if (Farm[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Clothes.Count; i++)
+                {
                     if (Clothes[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Hardware.Count; i++)
+                {
                     if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
@@ -78,7 +88,7 @@ namespace Final_Project_2
                 if (q == 0)
                 {
                     Auto.Add(new Auto_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
-                    track = Auto.Count - 1;
+                    track = Auto[Auto.Count - 1].Upc;
                     trackd = "Auto";
                 }
             }
@@ -90,14 +100,23 @@ namespace Final_Project_2
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Auto.Count; i++)
+                {
                     if (Auto[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Clothes.Count; i++)
+                {
                     if (Clothes[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Hardware.Count; i++)
+                {
                     if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
@@ -106,7 +125,7 @@ namespace Final_Project_2
                 if (q == 0)
                 {
                     Farm.Add(new Farm_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
-                    track = Farm.Count - 1;
+                    track = Farm[Farm.Count - 1].Upc;
                     trackd = "Farm";
                 }
             }
@@ -118,24 +137,32 @@ namespace Final_Project_2
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Auto.Count; i++)
+                {
                     if (Auto[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Farm.Count; i++)
+                {
                     if (Farm[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
+                }
+                for (int i = 0; i < Hardware.Count; i++)
+                {
                     if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
-
                 }
                 if (q == 0)
                 {
                     Clothes.Add(new Clothes_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
-                    track = Clothes.Count - 1;
+                    track = Clothes[Clothes.Count - 1].Upc;
                     trackd = "Clothes";
                 }
             }
@@ -147,15 +174,24 @@ namespace Final_Project_2
                     {
                         q = 1;
                     }
-                    if (Clothes[i].Upc == int.Parse(this.UPCE.Text))
-                    {
-                        q = 1;
-                    }
-                    if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
-                    {
-                        q = 1;
-                    }
+                }
+                for (int i = 0; i < Auto.Count; i++)
+                {
                     if (Auto[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                    }
+                }
+                for (int i = 0; i < Farm.Count; i++)
+                {
+                    if (Farm[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                    }
+                }
+                for (int i = 0; i < Hardware.Count; i++)
+                {
+                    if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
                     }
@@ -163,7 +199,7 @@ namespace Final_Project_2
                 if (q == 0)
                 {
                     Hardware.Add(new Hardware_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
-                    track = Hardware.Count - 1;
+                    track = Hardware[Hardware.Count - 1].Upc;
                     trackd = "Hardware";
                 }
             }
@@ -203,6 +239,102 @@ namespace Final_Project_2
                         }
                     }
             }
+            if (trackd == "Farm")
+            {
+                for (int i = 0; i < Farm.Count; i++)
+                    if (Farm[i].Upc == track)
+                    {
+                        if (this.Department1.Text == "Farm")
+                        {
+                            Farm[i].Upc = int.Parse(this.UPCE.Text);
+                            Farm[i].Name = this.Name1.Text;
+                            Farm[i].Location = this.Loc1.Text;
+                            Farm[i].Price = double.Parse(this.Price1.Text);
+                            Farm[i].InStock = int.Parse(this.Stock1.Text);
+                            Farm[i].STY = int.Parse(this.STY1.Text);
+                            Farm[i].SLY = int.Parse(this.SLY1.Text);
+                        }
+                        else if (this.Department1.Text == "Auto")
+                        {
+                            Farm.RemoveAt(i);
+                            Auto.Add(new Auto_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                        else if (this.Department1.Text == "Clothes")
+                        {
+                            Farm.RemoveAt(i);
+                            Clothes.Add(new Clothes_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                        else if (this.Department1.Text == "Hardware")
+                        {
+                            Farm.RemoveAt(i);
+                            Hardware.Add(new Hardware_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                    }
+            }
+            if (trackd == "Clothes")
+            {
+                for (int i = 0; i < Clothes.Count; i++)
+                    if (Clothes[i].Upc == track)
+                    {
+                        if (this.Department1.Text == "Clothes")
+                        {
+                            Clothes[i].Upc = int.Parse(this.UPCE.Text);
+                            Clothes[i].Name = this.Name1.Text;
+                            Clothes[i].Location = this.Loc1.Text;
+                            Clothes[i].Price = double.Parse(this.Price1.Text);
+                            Clothes[i].InStock = int.Parse(this.Stock1.Text);
+                            Clothes[i].STY = int.Parse(this.STY1.Text);
+                            Clothes[i].SLY = int.Parse(this.SLY1.Text);
+                        }
+                        else if (this.Department1.Text == "Farm")
+                        {
+                            Clothes.RemoveAt(i);
+                            Farm.Add(new Farm_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                        else if (this.Department1.Text == "Auto")
+                        {
+                            Clothes.RemoveAt(i);
+                            Auto.Add(new Auto_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                        else if (this.Department1.Text == "Hardware")
+                        {
+                            Clothes.RemoveAt(i);
+                            Hardware.Add(new Hardware_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                    }
+            }
+            if (trackd == "Hardware")
+            {
+                for (int i = 0; i < Hardware.Count; i++)
+                    if (Hardware[i].Upc == track)
+                    {
+                        if (this.Department1.Text == "Hardware")
+                        {
+                            Hardware[i].Upc = int.Parse(this.UPCE.Text);
+                            Hardware[i].Name = this.Name1.Text;
+                            Hardware[i].Location = this.Loc1.Text;
+                            Hardware[i].Price = double.Parse(this.Price1.Text);
+                            Hardware[i].InStock = int.Parse(this.Stock1.Text);
+                            Hardware[i].STY = int.Parse(this.STY1.Text);
+                            Hardware[i].SLY = int.Parse(this.SLY1.Text);
+                        }
+                        else if (this.Department1.Text == "Farm")
+                        {
+                            Hardware.RemoveAt(i);
+                            Farm.Add(new Farm_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                        else if (this.Department1.Text == "Clothes")
+                        {
+                            Hardware.RemoveAt(i);
+                            Clothes.Add(new Clothes_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                        else if (this.Department1.Text == "Auto")
+                        {
+                            Hardware.RemoveAt(i);
+                            Auto.Add(new Auto_Item(int.Parse(this.UPCE.Text), this.Loc1.Text, double.Parse(this.Price1.Text), int.Parse(this.Stock1.Text), this.Name1.Text, int.Parse(this.SLY1.Text), int.Parse(this.STY1.Text)));
+                        }
+                    }
+            }
         }
 
         private void Search_Click(object sender, EventArgs e)
@@ -212,7 +344,7 @@ namespace Final_Project_2
             {
                 if(Auto[i].Upc == int.Parse(this.UPCE.Text)) {
                     q = 1;
-                    track = i;
+                    track = Auto[i].Upc;
                     trackd = "Auto";
                     this.StoreName1.Text = one.Name;
                     this.StoreLoc1.Text = one.Location;
@@ -232,7 +364,7 @@ namespace Final_Project_2
                     if (Farm[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
-                        track = i;
+                        track = Farm[i].Upc;
                         trackd = "Farm";
                         this.StoreName1.Text = one.Name;
                         this.StoreLoc1.Text = one.Location;
@@ -253,7 +385,7 @@ namespace Final_Project_2
                     if (Clothes[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
-                        track = i;
+                        track = Clothes[i].Upc;
                         trackd = "Clothes";
                         this.StoreName1.Text = one.Name;
                         this.StoreLoc1.Text = one.Location;
@@ -274,7 +406,7 @@ namespace Final_Project_2
                     if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
                     {
                         q = 1;
-                        track = i;
+                        track = Hardware[i].Upc;
                         trackd = "Hardware";
                         this.StoreName1.Text = one.Name;
                         this.StoreLoc1.Text = one.Location;
@@ -323,6 +455,276 @@ namespace Final_Project_2
         private void StoreName1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int q = 0;
+            for (int i = 0; i < Auto.Count; i++)
+            {
+                if (Auto[i].Upc == int.Parse(this.UPCE.Text))
+                {
+                    q = 1;
+                    track = i;
+                    trackd = "Auto";
+                    this.StoreName1.Text = one.Name;
+                    this.StoreLoc1.Text = one.Location;
+                    this.Name1.Text = Auto[i].Name;
+                    this.Loc1.Text = Auto[i].PrintLocation();
+                    this.Price1.Text = Auto[i].Price.ToString();
+                    Auto[i].NewYear();
+                    this.Stock1.Text = Auto[i].InStock.ToString();
+                    this.STY1.Text = Auto[i].STY.ToString();
+                    this.SLY1.Text = Auto[i].SLY.ToString();
+                    this.Department1.Text = "Auto";
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Farm.Count; i++)
+                {
+                    if (Farm[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Farm";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Farm[i].Name;
+                        this.Loc1.Text = Farm[i].PrintLocation();
+                        this.Price1.Text = Farm[i].Price.ToString();
+                        Farm[i].NewYear();
+                        this.Stock1.Text = Farm[i].InStock.ToString();
+                        this.STY1.Text = Farm[i].STY.ToString();
+                        this.SLY1.Text = Farm[i].SLY.ToString();
+                        this.Department1.Text = "Farm";
+                    }
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Clothes.Count; i++)
+                {
+                    if (Clothes[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Clothes";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Clothes[i].Name;
+                        this.Loc1.Text = Clothes[i].PrintLocation();
+                        this.Price1.Text = Clothes[i].Price.ToString();
+                        Clothes[i].NewYear();
+                        this.Stock1.Text = Clothes[i].InStock.ToString();
+                        this.STY1.Text = Clothes[i].STY.ToString();
+                        this.SLY1.Text = Clothes[i].SLY.ToString();
+                        this.Department1.Text = "Clothes";
+                    }
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Hardware.Count; i++)
+                {
+                    if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Hardware";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Hardware[i].Name;
+                        this.Loc1.Text = Hardware[i].PrintLocation();
+                        this.Price1.Text = Hardware[i].Price.ToString();
+                        Hardware[i].NewYear();
+                        this.Stock1.Text = Hardware[i].InStock.ToString();
+                        this.STY1.Text = Hardware[i].STY.ToString();
+                        this.SLY1.Text = Hardware[i].SLY.ToString();
+                        this.Department1.Text = "Hardware";
+                    }
+                }
+            }
+        }
+
+        private void Sold_Click(object sender, EventArgs e)
+        {
+            int q = 0;
+            for (int i = 0; i < Auto.Count; i++)
+            {
+                if (Auto[i].Upc == int.Parse(this.UPCE.Text))
+                {
+                    q = 1;
+                    track = i;
+                    trackd = "Auto";
+                    this.StoreName1.Text = one.Name;
+                    this.StoreLoc1.Text = one.Location;
+                    this.Name1.Text = Auto[i].Name;
+                    this.Loc1.Text = Auto[i].PrintLocation();
+                    this.Price1.Text = Auto[i].Price.ToString();
+                    Auto[i].UpdateStock(1);
+                    this.Stock1.Text = Auto[i].InStock.ToString();
+                    this.STY1.Text = Auto[i].STY.ToString();
+                    this.SLY1.Text = Auto[i].SLY.ToString();
+                    this.Department1.Text = "Auto";
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Farm.Count; i++)
+                {
+                    if (Farm[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Farm";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Farm[i].Name;
+                        this.Loc1.Text = Farm[i].PrintLocation();
+                        this.Price1.Text = Farm[i].Price.ToString();
+                        Farm[i].UpdateStock(1);
+                        this.Stock1.Text = Farm[i].InStock.ToString();
+                        this.STY1.Text = Farm[i].STY.ToString();
+                        this.SLY1.Text = Farm[i].SLY.ToString();
+                        this.Department1.Text = "Farm";
+                    }
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Clothes.Count; i++)
+                {
+                    if (Clothes[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Clothes";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Clothes[i].Name;
+                        this.Loc1.Text = Clothes[i].PrintLocation();
+                        this.Price1.Text = Clothes[i].Price.ToString();
+                        Clothes[i].UpdateStock(1);
+                        this.Stock1.Text = Clothes[i].InStock.ToString();
+                        this.STY1.Text = Clothes[i].STY.ToString();
+                        this.SLY1.Text = Clothes[i].SLY.ToString();
+                        this.Department1.Text = "Clothes";
+                    }
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Hardware.Count; i++)
+                {
+                    if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Hardware";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Hardware[i].Name;
+                        this.Loc1.Text = Hardware[i].PrintLocation();
+                        this.Price1.Text = Hardware[i].Price.ToString();
+                        Hardware[i].UpdateStock(1);
+                        this.Stock1.Text = Hardware[i].InStock.ToString();
+                        this.STY1.Text = Hardware[i].STY.ToString();
+                        this.SLY1.Text = Hardware[i].SLY.ToString();
+                        this.Department1.Text = "Hardware";
+                    }
+                }
+            }
+        }
+
+        private void AddStock_Click(object sender, EventArgs e)
+        {
+            int q = 0;
+            for (int i = 0; i < Auto.Count; i++)
+            {
+                if (Auto[i].Upc == int.Parse(this.UPCE.Text))
+                {
+                    q = 1;
+                    track = i;
+                    trackd = "Auto";
+                    this.StoreName1.Text = one.Name;
+                    this.StoreLoc1.Text = one.Location;
+                    this.Name1.Text = Auto[i].Name;
+                    this.Loc1.Text = Auto[i].PrintLocation();
+                    this.Price1.Text = Auto[i].Price.ToString();
+                    Auto[i].InStock++;
+                    this.Stock1.Text = Auto[i].InStock.ToString();
+                    this.STY1.Text = Auto[i].STY.ToString();
+                    this.SLY1.Text = Auto[i].SLY.ToString();
+                    this.Department1.Text = "Auto";
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Farm.Count; i++)
+                {
+                    if (Farm[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Farm";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Farm[i].Name;
+                        this.Loc1.Text = Farm[i].PrintLocation();
+                        this.Price1.Text = Farm[i].Price.ToString();
+                        Farm[i].InStock++;
+                        this.Stock1.Text = Farm[i].InStock.ToString();
+                        this.STY1.Text = Farm[i].STY.ToString();
+                        this.SLY1.Text = Farm[i].SLY.ToString();
+                        this.Department1.Text = "Farm";
+                    }
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Clothes.Count; i++)
+                {
+                    if (Clothes[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Clothes";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Clothes[i].Name;
+                        this.Loc1.Text = Clothes[i].PrintLocation();
+                        this.Price1.Text = Clothes[i].Price.ToString();
+                        Clothes[i].InStock++;
+                        this.Stock1.Text = Clothes[i].InStock.ToString();
+                        this.STY1.Text = Clothes[i].STY.ToString();
+                        this.SLY1.Text = Clothes[i].SLY.ToString();
+                        this.Department1.Text = "Clothes";
+                    }
+                }
+            }
+            if (q == 0)
+            {
+                for (int i = 0; i < Hardware.Count; i++)
+                {
+                    if (Hardware[i].Upc == int.Parse(this.UPCE.Text))
+                    {
+                        q = 1;
+                        track = i;
+                        trackd = "Hardware";
+                        this.StoreName1.Text = one.Name;
+                        this.StoreLoc1.Text = one.Location;
+                        this.Name1.Text = Hardware[i].Name;
+                        this.Loc1.Text = Hardware[i].PrintLocation();
+                        this.Price1.Text = Hardware[i].Price.ToString();
+                        Hardware[i].InStock++;
+                        this.Stock1.Text = Hardware[i].InStock.ToString();
+                        this.STY1.Text = Hardware[i].STY.ToString();
+                        this.SLY1.Text = Hardware[i].SLY.ToString();
+                        this.Department1.Text = "Hardware";
+                    }
+                }
+            }
         }
     }
 }

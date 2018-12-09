@@ -126,7 +126,7 @@ namespace Final_Project_2
         public override void UpdateStock(int amount)
         {
             this._soldThisYear = this._soldThisYear + amount;
-            this._inStock = this._inStock + amount;
+            this._inStock = this._inStock - amount;
         }
 
         public override void NewYear()
